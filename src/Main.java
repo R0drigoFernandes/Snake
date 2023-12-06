@@ -1,11 +1,13 @@
 import java.awt.Canvas;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.image.BufferStrategy;
 import java.awt.Color;
 import javax.swing.JFrame;
 import java.awt.Graphics;
 
 // Rest of the code
-public class Main extends Canvas implements Runnable {
+public class Main extends Canvas implements Runnable, KeyListener {
     public Player player;
     public Comida comida;
     
@@ -71,7 +73,20 @@ public Main(){
         bs.show();
    }
 
-  
-    
-    
+
+    @Override
+    public void keyTyped(KeyEvent e) {
+
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+
+
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+
+    }
 }

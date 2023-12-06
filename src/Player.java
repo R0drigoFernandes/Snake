@@ -5,6 +5,8 @@ public class Player {
     private int velocidade = 1;
     private int x = 10;
     private int y = 10;
+
+    public boolean right, left, up, down;
     
 
     public Player(int tamanho, int velocidade, int x, int y) {
@@ -15,7 +17,16 @@ public class Player {
     }
 
     public void tick() {
-        x += velocidade;
+       if(right){
+           x += velocidade;
+       } else if (left) {
+           x -= velocidade;
+       } else if (up) {
+           y += velocidade;
+       } else if (down) {
+           y -= velocidade;
+       }
+
     }
 
     public int getTamanho() {
