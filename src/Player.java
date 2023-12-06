@@ -5,7 +5,7 @@ public class Player {
     private int velocidade = 5;
     private int x = 10;
     private int y = 10;
-    private boolean right, left, up, down;
+    private boolean right = false, left = false , up = false, down = false;
     
 
     public Player(int tamanho, int x, int y) {
