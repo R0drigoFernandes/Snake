@@ -1,13 +1,13 @@
 import java.awt.Canvas;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 import java.awt.image.BufferStrategy;
 import java.awt.Color;
 import javax.swing.JFrame;
 import java.awt.Graphics;
+import java.awt.event.KeyListener;
+import java.awt.event.KeyEvent;
 
 // Rest of the code
-public class Main extends Canvas implements Runnable, KeyListener {
+public class Main extends Canvas implements Runnable, Keylistener {
     public Player player;
     public Comida comida;
     
@@ -73,20 +73,33 @@ public Main(){
         bs.show();
    }
 
+   @Override
+   public void keyTyped(KeyEvent e) {
+   
 
-    @Override
-    public void keyTyped(KeyEvent e) {
+   }
 
+   @Override
+   public void keyPressed(KeyEvent e) {
+ if(e.getKeyCode() == KeyEvent.VK_UP){
+        player.up = true;
+    }
+    if(e.getKeyCode() == KeyEvent.VK_DOWN){
+        player.down = true;
+    }
+    if(e.getKeyCode() == KeyEvent.VK_LEFT){
+        player.left = true;
+    }
+    if(e.getKeyCode() == KeyEvent.VK_RIGHT){
+        player.right = true;
     }
 
-    @Override
-    public void keyPressed(KeyEvent e) {
+   }
 
+   @Override
+   public void keyReleased(KeyEvent e) {
 
-    }
-
-    @Override
-    public void keyReleased(KeyEvent e) {
-
-    }
+   }
+    
+    
 }
