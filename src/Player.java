@@ -2,20 +2,21 @@ import java.awt.Color;
 import java.awt.Graphics;
 public class Player {
     private int tamanho;
-    private int velocidade = 1;
+    private int velocidade = 5;
     private int x = 10;
     private int y = 10;
-    public boolean right, left, up, down;
+    private boolean right, left, up, down;
     
 
-    public Player(int tamanho, int velocidade, int x, int y) {
+    public Player(int tamanho, int x, int y) {
         this.tamanho = tamanho;
-        this.velocidade = velocidade;
         this.x = x;
         this.y = y;
     }
 
     public void tick() {
+        
+        
         if(right) {
             x += velocidade;
         }
@@ -26,8 +27,43 @@ public class Player {
             y -= velocidade;
         }
         if(down) {
+            System.out.println(down);
             y += velocidade;
         }
+    }
+
+    
+
+    public boolean isRight() {
+        return right;
+    }
+
+    public void setRight(boolean right) {
+        this.right = right;
+    }
+
+    public boolean isLeft() {
+        return left;
+    }
+
+    public void setLeft(boolean left) {
+        this.left = left;
+    }
+
+    public boolean isUp() {
+        return up;
+    }
+
+    public void setUp(boolean up) {
+        this.up = up;
+    }
+
+    public boolean isDown() {
+        return down;
+    }
+
+    public void setDown(boolean down) {
+        this.down = down;
     }
 
     public int getTamanho() {

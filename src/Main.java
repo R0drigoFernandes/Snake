@@ -7,14 +7,14 @@ import java.awt.event.KeyListener;
 import java.awt.event.KeyEvent;
 
 // Rest of the code
-public class Main extends Canvas implements Runnable, Keylistener {
+public class Main extends Canvas implements Runnable, KeyListener {
     public Player player;
     public Comida comida;
     
 public Main(){
     
     
- player = new Player(20,5,10,10);
+ player = new Player(20,10,10);
  comida = new Comida(100,100);
 
 }
@@ -39,11 +39,12 @@ public Main(){
    public static void main(String[] args) {
        Main snake = new Main();
         JFrame frame = new JFrame("Snake");
-        frame.setVisible(true);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.add(snake);
+        frame.pack();
         frame.setSize(500, 500);
         frame.setLocationRelativeTo(null);
-        frame.add(snake);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
         new Thread(snake).start();
 
 
@@ -81,23 +82,37 @@ public Main(){
 
    @Override
    public void keyPressed(KeyEvent e) {
- if(e.getKeyCode() == KeyEvent.VK_UP){
-        player.up = true;
+    int key = e.getKeyCode();
+    if(key == KeyEvent.VK_W){
+        player.setUp(true);
     }
-    if(e.getKeyCode() == KeyEvent.VK_DOWN){
-        player.down = true;
+    if(key == KeyEvent.VK_S){
+        player.setDown(true);
     }
-    if(e.getKeyCode() == KeyEvent.VK_LEFT){
-        player.left = true;
+    if(key == KeyEvent.VK_A){
+        player.setLeft(true);
     }
-    if(e.getKeyCode() == KeyEvent.VK_RIGHT){
-        player.right = true;
+    if(key == KeyEvent.VK_D){
+       player.setRight(true);
     }
 
    }
 
    @Override
    public void keyReleased(KeyEvent e) {
+    int key = e.getKeyCode();
+    if(key == KeyEvent.VK_W){
+      player.setUp(false);
+    }
+    if(key == KeyEvent.VK_S){
+       player.setDown(false);
+    }
+    if(key == KeyEvent.VK_A){
+        player.setLeft(false);
+    }
+    if(key == KeyEvent.VK_D){
+        player.setRight(false);
+    }
 
    }
     
