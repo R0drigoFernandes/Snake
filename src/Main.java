@@ -62,7 +62,7 @@ public Main(){
             return;
         }
         Graphics g = bs.getDrawGraphics();
-
+        
         g.setColor(Color.black);
         g.fillRect(0, 0, 500, 500);
        
@@ -84,16 +84,16 @@ public Main(){
    public void keyPressed(KeyEvent e) {
     int key = e.getKeyCode();
     if(key == KeyEvent.VK_W){
-        player.setUp(true);
+       player.up = true;
     }
     if(key == KeyEvent.VK_S){
-        player.setDown(true);
+       player.down = true;
     }
     if(key == KeyEvent.VK_A){
-        player.setLeft(true);
+       player.left = true;
     }
     if(key == KeyEvent.VK_D){
-       player.setRight(true);
+       player.right = true;
     }
 
    }
@@ -102,16 +102,16 @@ public Main(){
    public void keyReleased(KeyEvent e) {
     int key = e.getKeyCode();
     if(key == KeyEvent.VK_W){
-      player.setUp(false);
+      player.up = false;
     }
     if(key == KeyEvent.VK_S){
-       player.setDown(false);
+        player.down = false;
     }
     if(key == KeyEvent.VK_A){
-        player.setLeft(false);
+        player.left = false;
     }
     if(key == KeyEvent.VK_D){
-        player.setRight(false);
+        player.right = false;
     }
 
    }
