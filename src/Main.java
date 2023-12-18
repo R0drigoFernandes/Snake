@@ -82,35 +82,39 @@ public Main(){
 
    @Override
    public void keyPressed(KeyEvent e) {
-    int key = e.getKeyCode();
-    if(key == KeyEvent.VK_W){
-       player.up = true;
-    }
-    if(key == KeyEvent.VK_S){
-       player.down = true;
-    }
-    if(key == KeyEvent.VK_A){
-       player.left = true;
-    }
-    if(key == KeyEvent.VK_D){
-       player.right = true;
+    int keyCode = e.getKeyCode();
+    // Handle key pressed event
+    if (keyCode == KeyEvent.VK_UP) {
+        // Up key is pressed
+        player.up=true;
+    } else if (keyCode == KeyEvent.VK_DOWN) {
+        // Down key is pressed
+       player.down  = true;
+    } else if (keyCode == KeyEvent.VK_LEFT) {
+        // Left key is pressed
+        player.left = true;
+    } else if (keyCode == KeyEvent.VK_RIGHT) {
+        // Right key is pressed
+        player.right = true;
     }
 
    }
 
    @Override
    public void keyReleased(KeyEvent e) {
-    int key = e.getKeyCode();
-    if(key == KeyEvent.VK_W){
-      player.up = false;
-    }
-    if(key == KeyEvent.VK_S){
+    int keyCode = e.getKeyCode();
+    // Handle key released event
+    if (keyCode == KeyEvent.VK_UP) {
+        // Up key is released
+        player.up = false;
+    } else if (keyCode == KeyEvent.VK_DOWN) {
+        // Down key is released
         player.down = false;
-    }
-    if(key == KeyEvent.VK_A){
+    } else if (keyCode == KeyEvent.VK_LEFT) {
+        // Left key is released
         player.left = false;
-    }
-    if(key == KeyEvent.VK_D){
+    } else if (keyCode == KeyEvent.VK_RIGHT) {
+        // Right key is released
         player.right = false;
     }
 
